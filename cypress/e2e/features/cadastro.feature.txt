@@ -1,0 +1,7 @@
+Feature: Cadastro Lacrei Saúde
+
+  Scenario: Usuário realiza cadastro com sucesso
+
+    Dado que o usuário acessa a página de cadastro
+    Quando preenche o formulário de cadastro corretamente
+    Então o cadastro é enviado com sucesso

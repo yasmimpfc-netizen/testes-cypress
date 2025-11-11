@@ -1,0 +1,17 @@
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+
+Given("que o usuário acessa a página de cadastro", () => {
+  cy.visit("https://paciente.lacresaude.com.br/cadastro");
+});
+
+When("preenche o formulário de cadastro corretamente", () => {
+  cy.get('input[name="firstName"]').type("Yasmim");
+  cy.get('input[name="lastName"]').type("Ferreira");
+  cy.get('input[name="email"]').type("teste123@yopmail.com");
+  cy.get('input[name="confirmEmail"]').type("teste123@yopmail.com");
+  cy.get('input[name="password"]').type("SenhaForte123!");
+});
+
+Then("o cadastro é enviado com sucesso", () => {
+  cy.contains("Verifique seu e-mail").should("be.visible");
+});
